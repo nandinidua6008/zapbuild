@@ -10,7 +10,7 @@ int main()
     scanf("%d", &num);
 
     /* Calculate square root of num */
-    root = num*num;
+    root = sqrt(num);
 
     /* Print the resultant value */
     printf("Square root of %d is %d", num, root);
