@@ -1,8 +1,8 @@
     #include <stdio.h>
-    #include <conio.h>
+
     void main() {
     	int i,j,k,samp=1;
-    	clrscr();
+
     	for (i=5; i>=1; i--) {
     		for (k=samp; k>=0; k--) {
     			printf(" ");
@@ -14,5 +14,5 @@
     		samp = samp + 1;
     		printf("\n");
     	}
-    	getch();
     }
+    
