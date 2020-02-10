@@ -1,0 +1,8 @@
+this is the sample text file
+used to demostrate
+file handling in ruby
+especially
+3
+2
+1
+go
