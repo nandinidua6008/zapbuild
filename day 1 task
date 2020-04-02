@@ -1,0 +1,121 @@
+ques 1. What is the role of oops in programming?
+
+sol:- 
+Object-oriented programming – Object-oriented programming aims to implement real-world entities like inheritance, hiding, polymorphism, etc in programming. The main aim of OOP is to bind together the data and the functions that operate on them so that no other part of the code can access this data except that function.
+
+Class: A class is like a blueprint for an object.
+
+A Class is a user-defined data-type which has data members and member functions.
+Data members are the data variables and member functions are the functions used to manipulate these variables and together these data members and member functions define the properties and behaviour of the objects in a Class.
+We can say that a Class  is a blue-print representing a group of objects which shares some common properties and behaviours.
+
+Object: An Object is an identifiable entity with some characteristics and behaviour. An Object is an instance of a Class. When a class is defined, no memory is allocated but when an object is created memory is allocated.
+
+
+ques 2.What is encapsulation, Give an example in ruby?
+
+sol:-
+Encapsulation is defined as the wrapping up of data under a single unit.
+Advantages of Encapsulation:
+a. Data Hiding
+b. resuability
+
+example: 
+class Employee   
+
+    def initialize(name,department)
+        @emp_name = name
+        @emp_dep= department
+    end
+
+    def display()
+        puts"Name of student is = #@emp_name"
+        puts"department is = #@emp_dep"
+    end 
+end
+  
+  ob1 = Employee .new("nandini","ror")
+  ob2 = Employee.new("kanika","node js")
+
+  ob1.display()
+  ob2.display()
+ 
+
+ques 3.What is polymorphism, How to achieve it in ruby? Atleast implement this with two different ways with examples.
+
+sol:-
+Polymorphism comes form the greek words ‘polys’ meaning much or many and ‘morphe’ meaning form or shape. In programming, it refers to the ability to use functions or methods in different ways for different objects or data types.
+
+Example 1:with inheritance
+
+class Person
+    def initialize(first, last, age)
+         @first_name = first
+         @last_name = last
+         @age = age
+    end
+
+
+    def introduce
+          puts "Hi everyone. My name is #{@first_name} #{@last_name}."
+    end
+end
+
+class Student < Person
+    def introduce
+          puts "Hello teacher. My name is #{@first_name} #{@last_name}."
+    end
+end
+
+class Teacher < Person
+    def introduce
+          puts "Hello class. My name is #{@first_name} #{@last_name}."
+    end
+end
+
+class Parent < Person     
+    def introduce           
+        puts "Hi. I'm one of the parents. My name is #{@first_name} #{@last_name}."     
+    end 
+end 
+
+nandini=Person.new("nandini","dua","23")
+nandini.introduce
+
+
+john = Student.new("John", "Doe", "18") 
+john.introduce
+   
+mam=Teacher.new("sukhpreet","kaur",29)
+mam.introduce
+
+father=Parent.new("mahesh","dua",54)
+father.introduce
+ 
+example 2: with ducktyping
+
+class  Mathe 
+    
+    def display (ob)
+        ob.display 
+    end 
+end 
+class Add 
+    def display()
+        puts "add"
+    end 
+end 
+class Substract 
+    def display()
+        puts "substract"
+    end 
+end
+M=Mathe.new()
+
+ob1=Add.new()
+M.display(ob1)
+
+ob2=Substract.new()
+M.display(ob2)
+
+note: Duck Typing means an object type is defined by what it can do, not by what it is. Duck Typing refers to the tendency of Ruby to be less concerned with the class of an object and more concerned with what methods can be called on it and what operations can be performed on it.
